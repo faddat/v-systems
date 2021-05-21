@@ -36,9 +36,6 @@ docker push faddat/vsys-arm
 rm -rf .tmp | true
 mkdir .tmp
 
-# remove anything in the way of extraction
-docker run --rm --tty --volume $(pwd)/./.tmp:/root/./.tmp --workdir /root/./.tmp/.. faddat/toolbox rm -rf ./.tmp/result-rootfs
-
 # save the image to result-rootfs.tar
 docker save --output ./.tmp/result-rootfs.tar vsys-arm
 
